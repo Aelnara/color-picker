@@ -1,11 +1,12 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { ColorFormatContext } from 'contexts/ColorFormatContext';
 import { PalettesContext } from 'contexts/PalettesContext';
 import ColorBox from 'components/ColorBox/ColorBox';
 import Navbar from 'components/Navbar/Navbar';
 import PaletteFooter from 'components/PaletteFooter/PaletteFooter';
 import PaletteStyles from './PaletteStyles';
-import { generatePalette } from 'colorHelpers'
+import { generatePalette } from 'utils/colorHelpers'
 
 export default function Palette(props) {
    const classes = PaletteStyles()
@@ -13,7 +14,10 @@ export default function Palette(props) {
    const { findPalette } = React.useContext(PalettesContext);
    const [level, setLevel] = React.useState(500)
    
-   const palette = generatePalette(findPalette(props.match.params.id))
+   const paletteFound = findPalette(props.match.params.id)
+   if(!paletteFound) return <Redirect to='/' />
+   
+   const palette = generatePalette(paletteFound)
    
    const colorBoxes = palette.colors[level].map(color => (
       <ColorBox 

@@ -9,17 +9,18 @@ export default makeStyles(theme => ({
    drawer: {
       width: drawerWidth,
       flexShrink: 0,
+      height: '100vh'
    },
    drawerPaper: {
       width: drawerWidth,
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      border: 'none'
    },
    drawerHeader: {
       width: '100%',
       display: 'flex',
       alignItems: 'center',
-      padding: theme.spacing(0, 1),
       ...theme.mixins.toolbar,
       justifyContent: 'flex-end',
    },

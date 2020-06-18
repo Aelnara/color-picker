@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-import sizes from 'sizes';
+import chroma from 'chroma-js';
+import sizes from 'utils/sizes';
 
 export default makeStyles({
    root: {
@@ -28,13 +29,13 @@ export default makeStyles({
       }
    },
    boxContent: {
+      color: props => chroma(props.color).luminance() <= 0.08 ? 'white' : 'rgba(0,0,0,0.6)',
       position: 'absolute',
       left: '0px',
       bottom: '0px',
       boxSizing: 'border-box',
       width: '100%',
       padding: '10px',
-      color: 'rgba(0,0,0,0.5)',
       letterSpacing: '1px',
       textTransform: 'uppercase',
       fontSize: '12px',

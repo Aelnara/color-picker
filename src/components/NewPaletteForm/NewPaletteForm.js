@@ -12,12 +12,13 @@ import PaletteFormNav from 'components/PaletteFormNav/PaletteFormNav';
 import ColorPickerForm from 'components/ColorPickerForm/ColorPickerForm';
 import arrayMove from "array-move";
 import NewPaletteFormStyles from './NewPaletteFormStyles';
+import seedColors from 'utils/seedColors';
 
 export default function NewPaletteForm(props, {maxColors=20}) {
    const classes = NewPaletteFormStyles();
    const { palettes, savePalette } = React.useContext(PalettesContext);
    const [open, setOpen] = React.useState(true);
-   const [colors, setColors] = React.useState(palettes[0].colors);
+   const [colors, setColors] = React.useState(seedColors[0].colors);
    
    const paletteIsFull = colors.length >= maxColors
    
@@ -53,8 +54,20 @@ export default function NewPaletteForm(props, {maxColors=20}) {
    
    const addRandomColor = () => {
       const allColors = palettes.map(p => p.colors).flat()
-      const rand = Math.floor(Math.random() * allColors.length)
-      const randomColor = allColors[rand]
+      let rand
+      let randomColor
+      let isDuplicateColor = true
+      // separating the .some function from the while-loop to prevent annoying ESLint warning
+      const findingDupes = (randomColor) => {
+         return colors.some(color => color.name === randomColor.name)
+      }
+      
+      while(isDuplicateColor){
+         rand = Math.floor(Math.random() * allColors.length)
+         randomColor = allColors[rand]
+         // isDuplicateColor = colors.some(color => color.name === randomColor.name)
+         isDuplicateColor = findingDupes(randomColor)
+      }
       setColors([...colors, randomColor])
    }
    

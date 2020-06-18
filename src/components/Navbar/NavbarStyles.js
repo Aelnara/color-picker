@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import sizes from 'sizes';
+import sizes from 'utils/sizes';
 
 export default makeStyles({
    Navbar: {
@@ -9,8 +9,8 @@ export default makeStyles({
       height: '6vh'
    },
    logo: {
-      marginRight: '15px',
-      padding: '0 13px',
+      marginRight: '1rem',
+      padding: '0 10px',
       fontSize: '22px',
       backgroundColor: '#eceff1',
       fontFamily: 'Roboto',
@@ -19,10 +19,15 @@ export default makeStyles({
       alignItems: 'center',
       '& a': {
          textDecoration: 'none',
-         color: 'black'
+         color: 'black',
+         display: 'flex',
+         alignItems: 'center'
       },
       [sizes.down('xs')]: {
          display: 'none'
+      },
+      '& svg': {
+         fontSize: '2rem'
       }
    },
    selectContainer: {
@@ -48,7 +53,7 @@ export default makeStyles({
          height: '13px',
          marginTop: '-3px'
       },
-      [sizes.down('xs')]: {
+      [sizes.down('sm')]: {
          width: '150px'
       }
    }

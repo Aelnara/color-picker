@@ -6,6 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import PaletteIcon from '@material-ui/icons/Palette';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import NavbarStyles from './NavbarStyles';
@@ -27,7 +28,7 @@ export default function Navbar(props) {
    return (
       <header className={classes.Navbar}>
          <div className={classes.logo}>
-            <Link to='/'>ReactColorPicker</Link>
+            <Link to='/'><PaletteIcon />Palettes</Link>
          </div>
          {!props.singleColor && (
             <div>

@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import sizes from 'sizes';
+import sizes from 'utils/sizes';
 import chroma from 'chroma-js';
 
 export default makeStyles({
@@ -7,23 +7,24 @@ export default makeStyles({
       width: '20%',
       height: props => props.showingFullPalette ? '25%' : '50%',
       margin: '0 auto',
-      // display: 'inline-block',
+      display: 'inline-block',
       position: 'relative',
       cursor: 'pointer',
       // marginBottom: '-3.5px',
+      marginBottom: props => props.showingFullPalette ? '-4px' : '0',
       '&:hover button': {
          opacity: '1'
       },
       [sizes.down('lg')]: {
-         width: '25%',
-         height: props => props.showingFullPalette ? '20%' : '33.3333%',
+         width: props => props.showingFullPalette ? '25%' : '20%',
+         height: props => props.showingFullPalette ? '20%' : '50%',
       },
       [sizes.down('md')]: {
-         width: '50%',
+         width: '50% !important',
          height: props => props.showingFullPalette ? '10%' : '20%',
       },
       [sizes.down('xs')]: {
-         width: '100%',
+         width: '100% !important',
          height: props => props.showingFullPalette ? '5%' : '10%',
       }
    },

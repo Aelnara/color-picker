@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import sizes from 'sizes';
+import sizes from 'utils/sizes';
 
 export default makeStyles({
    Palette: {
@@ -41,10 +41,6 @@ export default makeStyles({
          lineHeight: '30px',
          textTransform: 'uppercase',
          textDecoration: 'none'
-      },
-      [sizes.down('lg')]: {
-         width: '25%',
-         height: '33.3333%',
       },
       [sizes.down('md')]: {
          width: '50%',

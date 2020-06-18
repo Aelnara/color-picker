@@ -9,6 +9,13 @@ export default makeStyles({
       alignItems: 'center',
       paddingRight: '1rem',
       fontFamily: 'Roboto',
-      fontWeight: '700'
+      fontWeight: '700',
+      '& span': {
+         display: 'flex',
+         alignItems: 'center',
+         '& svg': {
+            padding: '0 5px'
+         }
+      }
    }
 });

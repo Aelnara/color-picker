@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import sizes from 'utils/sizes';
 
 export default makeStyles({
    root: {
@@ -49,6 +50,9 @@ export default makeStyles({
       padding: '10px',
       zIndex: '5',
       opacity: '0',
-      transition: 'all 0.2s ease-in-out'
+      transition: 'all 0.2s ease-in-out',
+      [sizes.down('md')]: {
+         opacity: '1'
+      }
    }
 })

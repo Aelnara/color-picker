@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { ColorFormatProvider } from 'contexts/ColorFormatContext';
 import { PalettesProvider } from 'contexts/PalettesContext';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -21,6 +21,7 @@ export default function App() {
                         <Route exact path='/palette/new' render={routeProps => <Page><NewPaletteForm {...routeProps} /></Page>} />
                         <Route exact path='/palette/:id' render={routeProps => <Page><Palette {...routeProps} /></Page>} />
                         <Route exact path='/palette/:paletteId/:colorId' render={routeProps => <Page><SingleColorPalette {...routeProps} /></Page>} />
+                        <Route render={() => <Redirect to='/' />}/>
                      </Switch>
                   </CSSTransition>
                </TransitionGroup>

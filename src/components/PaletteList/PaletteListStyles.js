@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import sizes from 'sizes';
+import sizes from 'utils/sizes';
 import background from 'assets/background.svg'
 
 export default makeStyles({
@@ -33,6 +33,7 @@ export default makeStyles({
       flexDirection: 'column',
       alignItems: 'flex-start',
       flexWrap: 'wrap',
+      paddingBottom: '2rem',
       [sizes.down('xl')]: {
          width: '80%'
       },

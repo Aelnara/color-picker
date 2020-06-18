@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-
 export default makeStyles({
    colorPicker: {
       width: '100% !important',

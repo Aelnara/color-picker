@@ -15,7 +15,7 @@ export default function MiniPalette(props) {
    }
    
    return (
-      <div className={classes.root} onClick={props.handleClick}>
+      <div className={classes.root} onClick={props.goToPalette}>
          <DeleteIcon className={classes.deleteIcon} onClick={handleDelete}/>
          <div className={classes.colors}>
             {miniColorBoxes}

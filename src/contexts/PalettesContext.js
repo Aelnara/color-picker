@@ -1,5 +1,5 @@
 import React from 'react';
-import seedColors from 'seedColors';
+import seedColors from 'utils/seedColors';
 
 export const PalettesContext = React.createContext();
 

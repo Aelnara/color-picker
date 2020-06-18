@@ -9,7 +9,7 @@ export default makeStyles({
    },
    colors: {
       height: '90%',
-      display: 'flex',
-      flexWrap: 'wrap'
+      // display: 'flex',
+      // flexWrap: 'wrap'
    }
 })

@@ -37,7 +37,7 @@ export default function ColorPickerForm(props) {
    return (
       <div>
          <ChromePicker className={classes.colorPicker} color={currentColor} onChange={updateCurrentColor}/>
-         <ValidatorForm onSubmit={handleSubmit}>
+         <ValidatorForm onSubmit={handleSubmit} instantValidate={false}>
             <TextValidator 
                variant='filled'
                margin='normal'
