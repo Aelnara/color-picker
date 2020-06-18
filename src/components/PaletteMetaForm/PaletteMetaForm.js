@@ -7,8 +7,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import PaletteMetaFormStyles from './PaletteMetaFormStyles';
 
 export default function PaletteMetaForm(props) {
+   const classes = PaletteMetaFormStyles()
    const [newPaletteName, setNewPaletteName] = React.useState('')
    const { palettes } = React.useContext(PalettesContext)
    
@@ -34,7 +36,7 @@ export default function PaletteMetaForm(props) {
          <ValidatorForm onSubmit={handleSubmit}>
             <DialogContent>
                <DialogContentText>
-                  Please enter a name for your new palette. Make sure it's unique!
+                  Please enter a name for your new palette!
                </DialogContentText>
                <TextValidator 
                   autoFocus
@@ -47,8 +49,8 @@ export default function PaletteMetaForm(props) {
                   errorMessages={['Enter palette name!', 'Palette name already used!']}
                />
             </DialogContent>
-            <DialogActions>
-               <Button onClick={props.hideForm} color="primary">Cancel</Button>
+            <DialogActions className={classes.buttons}>
+               <Button onClick={props.hideForm} variant='outlined' color="primary">Cancel</Button>
                <Button variant='contained' color='primary' type='submit'>Save Palette</Button>
             </DialogActions>
          </ValidatorForm>
