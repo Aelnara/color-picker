@@ -13,7 +13,7 @@ export default function ColorBox(props) {
    }
    
    React.useEffect(() => {
-      setTimeout(() => setCopied(false), 1500)
+      if(copied) setTimeout(() => setCopied(false), 1500)
    }, [copied])
    
    return (
