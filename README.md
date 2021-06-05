@@ -5,7 +5,8 @@ You can organize them, put them in order with the drag and drop functionality an
 
 Link to the demo:
 
-https://master.d2bw74imx5d7ex.amplifyapp.com/
+## [TRY IT OUT](https://master.d2bw74imx5d7ex.amplifyapp.com/)
+
 
 Please note that this is an ongoing project as there is always something to improve.
 It is mostly optimized for smaller screen sizes as well but why would you try to work with colors on a mobile...?
